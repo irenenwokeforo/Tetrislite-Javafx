@@ -59,8 +59,8 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     int score = 0;
     public boolean gameOver;
 
-    double[] x_Paused = {p_right_x + 160, p_right_x + 160, p_right_x + 180};
-    double[] y_Paused = {p_top_y - 80, p_top_y - 45, p_top_y - 62.5};
+    double[] x_Paused;
+    double[] y_Paused;
 
     public TetrisScene(Gameapp ga){ //passing the instance of the gameapp object from App to the scene
 
@@ -103,6 +103,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     
         next_mino3 = pickMino();
         recenter(next_mino3, NEXTMINO_Y + (8 * BLOCK_SIZE));
+            //Misc Dimensions
 
         staticRender();
 
@@ -268,7 +269,6 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     }
 
     public void staticRender(){
-
         //Set Font**
         Font font = Font.loadFont("file:src/main/resources/font/Handjet-Bold.ttf", 50);
         gc.setFont(font);
@@ -322,23 +322,24 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
         next_mino1.render(gc);
         next_mino2.render(gc);
         next_mino3.render(gc);
+
         for(int i = 0; i < inactiveBlocks.size(); i++){
             inactiveBlocks.get(i).render(gc);
         }
 
-        //Play
-        gc.setStroke(Color.WHITE);
-        gc.setLineWidth(4);
-
-        //Pause
+        //Pause & play symbols
         if(KeyHandler.pausePressed){
             gc.clearRect(p_right_x + 170, p_top_y - 90, 40, 50);
-            gc.setFill(Color.BLACK);
+            gc.setFill(Color.WHITE);
+            double[] x_Paused = {p_right_x + 180, p_right_x + 180, p_right_x + 204};
+            double[] y_Paused = {p_top_y - 80, p_top_y - 45, p_top_y - 62.5};
             gc.fillPolygon(x_Paused, y_Paused, 3);
         }
 
         else{
             gc.clearRect(p_right_x + 170, p_top_y - 90, 40, 50);
+            gc.setStroke(Color.WHITE);
+            gc.setLineWidth(4);
             gc.strokeRoundRect(p_right_x + 180, p_top_y - 80, 4, 35, 4, 4);
             gc.strokeRoundRect(p_right_x + 200, p_top_y - 80, 4, 35, 4, 4);
         }

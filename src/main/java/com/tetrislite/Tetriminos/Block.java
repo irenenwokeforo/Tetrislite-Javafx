@@ -16,17 +16,6 @@ public class Block extends Rectangle{
     Color colour;
     Color highlight;
     Color shadow;
-
-    double[] h_xPoints = {x_pos + margin, x_pos + 28.0,  x_pos + 25, x_pos + 5};
-    double[] h_yPoints = {y_pos + margin, y_pos + margin, y_pos + 5, y_pos + 5};
-
-    double[] s_xPoints = {x_pos + margin, x_pos + 28.0,  x_pos + 25, x_pos + 5};
-    double[] s_yPoints = {y_pos + 28, y_pos + 28, y_pos + 25, y_pos + 25};
-
-    double[] d1_xPoints = {x_pos + margin, x_pos + margin, x_pos + 5, x_pos + 5};
-    double[] d1_yPoints = {y_pos + margin, y_pos + 28, y_pos + 25, y_pos + 5};
-    double[] d2_xPoints = {x_pos + 28, x_pos + 28, x_pos + 25, x_pos + 25};
-    double[] d2_yPoints = {y_pos + margin, y_pos + 28, y_pos + 25, y_pos + 5};
     
     public Block(Color c){
         this.colour = c;
@@ -113,6 +102,17 @@ public class Block extends Rectangle{
 
         margin = 2;
         
+        double[] h_xPoints = {x_pos + margin, x_pos + 28.0,  x_pos + 25, x_pos + 5};
+        double[] h_yPoints = {y_pos + margin, y_pos + margin, y_pos + 5, y_pos + 5};
+    
+        double[] s_xPoints = {x_pos + margin, x_pos + 28.0,  x_pos + 25, x_pos + 5};
+        double[] s_yPoints = {y_pos + 28, y_pos + 28, y_pos + 25, y_pos + 25};
+    
+        double[] d1_xPoints = {x_pos + margin, x_pos + margin, x_pos + 5, x_pos + 5};
+        double[] d1_yPoints = {y_pos + margin, y_pos + 28, y_pos + 25, y_pos + 5};
+        double[] d2_xPoints = {x_pos + 28, x_pos + 28, x_pos + 25, x_pos + 25};
+        double[] d2_yPoints = {y_pos + margin, y_pos + 28, y_pos + 25, y_pos + 5};
+
         gc.setFill(base);
         gc.fillRect(x_pos + margin, y_pos + margin, M_SIZE - (margin * 2), M_SIZE - (margin * 2));
 
