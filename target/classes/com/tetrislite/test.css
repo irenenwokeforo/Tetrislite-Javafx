@@ -1,0 +1,18 @@
+
+.button {
+    -fx-background-color: #ffffff;
+    -fx-effect: innershadow(gaussian, #c8f3ff, 0, 0, 0, 5);
+    -fx-text-fill: pink;
+    -fx-font-size: 30px;
+    -fx-font-family: Handjet;
+    -fx-cursor: hand;
+    -fx-background-radius: 9;
+}
+
+.button:hover {
+    -fx-background-color: #f2f2f2;
+    -fx-effect: innershadow(gaussian, #BDEFFD, 0, 0, 0, 5);
+    -fx-ellipsis-string: "E x i t";
+    -fx-text-fill: pink;
+    -fx-translate-y: 3;
+}

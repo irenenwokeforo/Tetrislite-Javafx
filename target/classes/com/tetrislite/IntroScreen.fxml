@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tetrislite.SceneController">
+   <children>
+      <StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PINK" height="805.0" layoutX="5.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="805.0" />
+            <Canvas fx:id="backgroundCanvas" height="800.0" width="800.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="805.0" layoutX="8.0" layoutY="8.0" opacity="0.01" stroke="BLACK" strokeType="INSIDE" width="805.0" />
+         </children></StackPane>
+      <HBox alignment="TOP_CENTER" layoutX="254.0" layoutY="275.0" prefWidth="300.0" spacing="20.0">
+         <children>
+            <Label rotate="-5.0" text="T" textFill="#8f6a7c" translateY="6.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label layoutY="9.0" rotate="-3.0" text="E" textFill="#8f6a7c" translateY="3.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label rotate="-1.0" text="T" textFill="#8f6a7c" translateY="1.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label rotate="1.0" text="R" textFill="#8f6a7c" translateY="1.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label rotate="3.0" text="I" textFill="#8f6a7c" translateY="3.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label rotate="5.0" text="S" textFill="#8f6a7c" translateY="6.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="246.0" layoutY="280.0" maxHeight="160.0" maxWidth="310.0" prefWidth="300.0" spacing="20.0">
+         <children>
+            <Label fx:id="whiteT" rotate="-5.0" text="T" textFill="WHITE" translateY="6.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label rotate="-3.0" text="E" textFill="WHITE" translateY="3.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label rotate="-1.0" text="T" textFill="WHITE" translateY="1.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label rotate="1.0" text="R" textFill="WHITE" translateY="1.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" rotate="3.0" text="I" textFill="WHITE" translateY="3.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" rotate="5.0" text="S" textFill="WHITE" translateY="6.0">
+               <font>
+                  <Font name="Handjet Bold" size="96.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" layoutX="300.0" layoutY="450.0" minHeight="200.0" minWidth="200.0" prefHeight="150.0" prefWidth="100.0" spacing="20.0">
+         <children>
+            <Button alignment="CENTER" minHeight="50.0" mnemonicParsing="false" onAction="#switchToGame" prefHeight="50.0" prefWidth="175.0" stylesheets="@test.css" text="S t a r t">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button alignment="TOP_CENTER" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="175.0" stylesheets="@test.css" text="E x i t" textAlignment="CENTER" textFill="PINK">
+               <font>
+                  <Font name="Handjet Bold" size="30.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+      <Label layoutX="369.0" layoutY="370.0" prefHeight="58.0" prefWidth="66.0" text="Lite" textFill="WHITE">
+         <font>
+            <Font name="Handjet Bold" size="50.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
