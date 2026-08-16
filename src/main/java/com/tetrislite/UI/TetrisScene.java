@@ -48,7 +48,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
 
     //Line Clearing Effects
     int clearingCounter = 0;
-    int totalLinesCleared;
+    int totalLinesCleared = 0;
     boolean clearingCounterOn;
     ArrayList<Integer> rowsforEffects = new ArrayList<>();
 
@@ -57,6 +57,9 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     int staticSpeedCounter = 0;
     int level = 1;
     int score = 0;
+    String scoreText = String.format("%05d", score);
+    String levelText = String.format("%05d", level);
+    String linesText = String.format("%05d", totalLinesCleared);
     public boolean gameOver;
 
     double[] x_Paused;
@@ -178,6 +181,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
 
                     tempLinesCleared++;
                     totalLinesCleared++;
+                    linesText = String.format("%05d", totalLinesCleared);
 
                     increaseSpeed();
                 }
@@ -196,6 +200,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     public void increaseSpeed(){
         if(totalLinesCleared > 0 && totalLinesCleared % 10 == 0 && dropSpeed > 4 && level <= 30){
             level++;
+            levelText = String.format("%05d", level);
 
             if(level <= 10){
                 dropSpeed = dropSpeed - 5;
@@ -216,8 +221,10 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     public int calcScore(int tempLinesCleared){
 
         if (tempLinesCleared > 0 && score <= 999999){
+
             int scorePerLine = level * 10;
             score += scorePerLine * tempLinesCleared;
+            scoreText = String.format("%05d", score);
         }
 
         return score;
@@ -270,7 +277,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
 
     public void staticRender(){
         //Set Font**
-        Font font = Font.loadFont("file:src/main/resources/font/Handjet-Bold.ttf", 50);
+        Font font = Font.loadFont("file:src/main/resources/font/Handjet-Bold.ttf", 45);
         gc.setFont(font);
 
         //Play Area Box
@@ -307,15 +314,15 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
 
         //Shadowed Text
         gc.setFill(Color.web("#8F6A7C"));
-        gc.fillText("SCORE : " + score, p_left_x - 185, p_top_y + 50, 134);
-        gc.fillText("LEVEL : " + level, p_left_x - 185, p_top_y + 186, 134 );
-        gc.fillText("LINES : " + totalLinesCleared, p_left_x - 185, p_top_y + 327, 134);
+        gc.fillText("SCORE\n" + scoreText, p_left_x - 165, p_top_y + 49, 134);
+        gc.fillText(" LEVEL\n" + levelText, p_left_x - 165, p_top_y + 161, 134);
+        gc.fillText(" LINES\n" + linesText, p_left_x - 165, p_top_y + 273, 134);
 
         //Regular Text
         gc.setFill(Color.WHITE);
-        gc.fillText("SCORE : " + score, p_left_x - 186, p_top_y + 45, 134);
-        gc.fillText("LEVEL : " + level, p_left_x - 186, p_top_y + 181, 134 );
-        gc.fillText("LINES : " + totalLinesCleared, p_left_x - 186, p_top_y + 322, 134);
+        gc.fillText("SCORE\n" + scoreText, p_left_x - 166, p_top_y + 44, 134);
+        gc.fillText(" LEVEL\n" + levelText, p_left_x - 166, p_top_y + 156, 134);
+        gc.fillText(" LINES\n" + linesText, p_left_x - 166, p_top_y + 268, 134);
 
         //Draw all Minos
         cur_mino.render(gc);
