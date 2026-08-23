@@ -52,18 +52,27 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     boolean clearingCounterOn;
     ArrayList<Integer> rowsforEffects = new ArrayList<>();
 
+    //Game Over Effects
+    public boolean gameOver;
+    int x_gameOver = 245;
+    int y_gameOver = 75;
+    private double glowAlpha = 1.0;
+    private boolean fadeOut = true;
+
     //Game Settings
-    static public int dropSpeed = Gameapp.FPS;
+    static public int dropSpeed = 48;
     int staticSpeedCounter = 0;
     int level = 1;
     int score = 0;
     String scoreText = String.format("%05d", score);
     String levelText = String.format("%05d", level);
     String linesText = String.format("%05d", totalLinesCleared);
-    public boolean gameOver;
 
+    //Other
     double[] x_Paused;
     double[] y_Paused;
+    Font font;
+    Font font2;
 
     public TetrisScene(Gameapp ga){ //passing the instance of the gameapp object from App to the scene
 
@@ -203,7 +212,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
             levelText = String.format("%05d", level);
 
             if(level <= 10){
-                dropSpeed = dropSpeed - 5;
+                dropSpeed = dropSpeed - 4;
             }
 
             else if(level > 10 && level < 20){
@@ -256,7 +265,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
             else{
                 cur_mino.setPosition(START_POS_X, START_POS_Y);
             }
-
+            
             next_mino1 = next_mino2;
             recenter(next_mino1, NEXTMINO_Y);
 
@@ -275,10 +284,11 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
         
     }
 
+
     public void staticRender(){
         //Set Font**
-        Font font = Font.loadFont("file:src/main/resources/font/Handjet-Bold.ttf", 45);
-        gc.setFont(font);
+        font = Font.loadFont("file:src/main/resources/font/Handjet-Bold.ttf", 45);
+        font2 = Font.loadFont("file:src/main/resources/font/Handjet-Bold.ttf", 60);
 
         //Play Area Box
         gc.setLineWidth(8);
@@ -290,6 +300,27 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
 
         //Stats Box
         gc.strokeRoundRect(p_left_x - 192, p_top_y - 8, 150, 360, 16, 16);
+    }
+
+//Change opacity of font to create a glowing effect
+    private void glowEffect(){
+        if (fadeOut){
+            glowAlpha -= 0.08;
+    
+            if (glowAlpha <= 0.05) {
+                glowAlpha = 0.05;
+                fadeOut = false;
+            }
+        } 
+        
+        else {
+            glowAlpha += 0.08;
+    
+            if (glowAlpha >= 1.0) {
+                glowAlpha = 1.0;
+                fadeOut = true;
+            }
+        }
     }
 
     public void render(){
@@ -311,6 +342,8 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
         for(int y = p_top_y + BLOCK_SIZE; y < p_bottom_y; y += BLOCK_SIZE){
             gc.strokeLine(p_left_x, y, p_right_x, y);
         }
+
+        gc.setFont(font);
 
         //Shadowed Text
         gc.setFill(Color.web("#8F6A7C"));
@@ -367,6 +400,20 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
                 clearingCounter = 0;
                 rowsforEffects.clear();
             }
+        }
+
+
+        if(gameOver){
+            glowEffect();
+            gc.setGlobalAlpha(glowAlpha);
+
+            gc.setFont(font2);
+            gc.setFill(Color.web("#8F6A7C"));
+            gc.fillText("G A M E   O V E R !", x_gameOver, y_gameOver + 5);
+            gc.setFill(Color.RED);
+            gc.fillText("G A M E   O V E R !", x_gameOver, y_gameOver);
+
+            gc.setGlobalAlpha(1.0);
         }
 
     }
