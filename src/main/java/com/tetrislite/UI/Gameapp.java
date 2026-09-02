@@ -29,10 +29,11 @@ public class Gameapp {
 
 
     public void launchGame(){
+        
         //Game Loop
         new AnimationTimer(){
             double delta = 0; 
-            double renderInterval = 1000000000/FPS; //paint every 0.01666s 
+            double renderInterval = 1000000000/FPS; //paint every 1s / 60 = 0.01666s 
             long lastTime = System.nanoTime();
 
             @Override

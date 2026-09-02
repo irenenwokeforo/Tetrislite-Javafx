@@ -46,18 +46,24 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     //Inactive Mino Handling
     public static ArrayList<Block> inactiveBlocks = new ArrayList<>();
 
-    //Line Clearing Effects
+    //Line Clearing Effect
     int clearingCounter = 0;
     int totalLinesCleared = 0;
     boolean clearingCounterOn;
     ArrayList<Integer> rowsforEffects = new ArrayList<>();
 
-    //Game Over Effects
+    //Game Over Effect
     public boolean gameOver;
     int x_gameOver = 245;
     int y_gameOver = 75;
     private double glowAlpha = 1.0;
     private boolean fadeOut = true;
+
+    //Tetris Effect
+    public boolean tetris = false;
+    int tetrisCounter = 0;
+    static int X_TETRIS = 270;
+    static int Y_TETRIS = 75;
 
     //Game Settings
     static public int dropSpeed = 48;
@@ -236,6 +242,10 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
             scoreText = String.format("%05d", score);
         }
 
+        if(tempLinesCleared == 4){
+            tetris = true;
+        }
+
         return score;
     }
 
@@ -302,7 +312,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
         gc.strokeRoundRect(p_left_x - 192, p_top_y - 8, 150, 360, 16, 16);
     }
 
-//Change opacity of font to create a glowing effect
+    //Change opacity of font to create a glowing effect
     private void glowEffect(){
         if (fadeOut){
             glowAlpha -= 0.08;
@@ -320,6 +330,92 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
                 glowAlpha = 1.0;
                 fadeOut = true;
             }
+        }
+    }
+
+    private void tetrisEffect(){
+        gc.setFont(font2);
+
+        switch(tetrisCounter){
+
+            case 5:
+                gc.setFill(Color.web("#8F6A7C"));
+                gc.fillText("T", X_TETRIS - 1, Y_TETRIS + 5);
+                gc.setFill(Color.web("#A76EEE"));
+                gc.fillText("T", X_TETRIS, Y_TETRIS);
+                break;
+
+            case 10:
+                gc.setFill(Color.web("#8F6A7C"));
+                gc.fillText("E", X_TETRIS + 39, Y_TETRIS + 5);
+                gc.setFill(Color.BLUE);
+                gc.fillText("E", X_TETRIS + 40, Y_TETRIS);
+                break;
+
+            case 15:
+                gc.setFill(Color.web("#8F6A7C"));
+                gc.fillText("T", X_TETRIS + 79, Y_TETRIS + 5);
+                gc.setFill(Color.CYAN);
+                gc.fillText("T", X_TETRIS + 80, Y_TETRIS);
+                break;
+
+            case 20:
+                gc.setFill(Color.web("#8F6A7C"));
+                gc.fillText("R", X_TETRIS + 119, Y_TETRIS + 5);
+                gc.setFill(Color.LIME);
+                gc.fillText("R", X_TETRIS + 120, Y_TETRIS);
+                break;
+
+            case 25:
+                gc.setFill(Color.web("#8F6A7C"));
+                gc.fillText("I", X_TETRIS + 159, Y_TETRIS + 5);
+                gc.setFill(Color.GOLD);
+                gc.fillText("I", X_TETRIS + 160, Y_TETRIS);
+                break;
+
+            case 30:
+                gc.setFill(Color.web("#8F6A7C"));
+                gc.fillText("S", X_TETRIS + 199, Y_TETRIS + 5);
+                gc.setFill(Color.ORANGE);
+                gc.fillText("S", X_TETRIS + 200, Y_TETRIS);
+                break;
+
+            case 35:
+                gc.setFill(Color.web("#8F6A7C"));
+                gc.fillText("!", X_TETRIS + 239, Y_TETRIS + 5);
+                gc.setFill(Color.RED);
+                gc.fillText("!", X_TETRIS + 240, Y_TETRIS);
+                break;
+        
+            case 60:
+                gc.clearRect(X_TETRIS - 5, Y_TETRIS - 45, 40, 55);
+                break;
+
+            case 65:
+                gc.clearRect(X_TETRIS - 5, Y_TETRIS - 45, 80, 55);
+                break;
+
+            case 70:
+                gc.clearRect(X_TETRIS - 5, Y_TETRIS - 45, 120, 55);
+                break;
+            
+            case 75:
+                gc.clearRect(X_TETRIS - 5, Y_TETRIS - 45, 160, 55);
+                break;
+
+            case 80:
+                gc.clearRect(X_TETRIS - 5, Y_TETRIS - 45, 200, 55);
+                break;
+
+            case 85:
+                gc.clearRect(X_TETRIS - 5, Y_TETRIS - 45, 240, 55);
+                break;
+
+            case 90:
+                gc.clearRect(X_TETRIS - 5, Y_TETRIS - 45, 280, 55);
+                tetris = false;
+                tetrisCounter = 0;
+                break;
         }
     }
 
@@ -402,18 +498,22 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
             }
         }
 
-
         if(gameOver){
             glowEffect();
             gc.setGlobalAlpha(glowAlpha);
 
             gc.setFont(font2);
             gc.setFill(Color.web("#8F6A7C"));
-            gc.fillText("G A M E   O V E R !", x_gameOver, y_gameOver + 5);
+            gc.fillText("G A M E   O V E R !", x_gameOver - 1, y_gameOver + 5);
             gc.setFill(Color.RED);
             gc.fillText("G A M E   O V E R !", x_gameOver, y_gameOver);
 
             gc.setGlobalAlpha(1.0);
+        }
+
+        if(tetris){
+            tetrisCounter++;
+            tetrisEffect();
         }
 
     }
