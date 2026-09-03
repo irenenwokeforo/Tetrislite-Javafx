@@ -491,10 +491,9 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
             }
 
             if(clearingCounter == 5){
-                
+                rowsforEffects.clear();
                 clearingCounterOn = false;
                 clearingCounter = 0;
-                rowsforEffects.clear();
             }
         }
 
