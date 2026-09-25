@@ -1,6 +1,8 @@
-package com.tetrislite.Tetriminos;
+package com.tetrislite.tetriminos;
 
 import javafx.scene.paint.Color;
+
+
 
 public class Mino_L extends Mino{
 

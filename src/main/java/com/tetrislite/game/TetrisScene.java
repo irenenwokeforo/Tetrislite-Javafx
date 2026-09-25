@@ -1,4 +1,4 @@
-package com.tetrislite.UI;
+package com.tetrislite.game;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,6 +9,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+
 
 
 public class TetrisScene { 
@@ -80,6 +81,7 @@ public class TetrisScene {
     Font font;
     Font font2;
 
+
     public TetrisScene(Gameapp ga){ //passing the instance of the gameapp object from App to the scene
 
         this.ga = ga;
@@ -130,6 +132,7 @@ public class TetrisScene {
 
 
     private void recenter(Mino m, final int Y_POS){
+
         //Center minos in the waiting box horizontally
         if(m instanceof Mino_Z || m instanceof Mino_J || m instanceof Mino_T){
             m.setPosition(NEXTMINO_X + (BLOCK_SIZE / 2), Y_POS);
@@ -142,6 +145,7 @@ public class TetrisScene {
 
 
     public void clearRow(){
+
         int x_scanner = p_left_x;
         int y_scanner = p_top_y;
         int staticBlockCount = 0;
@@ -195,6 +199,7 @@ public class TetrisScene {
 
 
     public void increaseSpeed(){
+
         if(totalLinesCleared > 0 && totalLinesCleared % 10 == 0 && dropSpeed > 4 && level <= 30){
             level++;
             levelText = String.format("%05d", level);
@@ -315,6 +320,7 @@ public class TetrisScene {
         }
     }
 
+
     private void tetrisEffect(){
         gc.setFont(font2);
 
@@ -400,6 +406,7 @@ public class TetrisScene {
                 break;
         }
     }
+
 
     public void render(){
 
@@ -496,7 +503,5 @@ public class TetrisScene {
             tetrisCounter++;
             tetrisEffect();
         }
-
     }
-    
 }

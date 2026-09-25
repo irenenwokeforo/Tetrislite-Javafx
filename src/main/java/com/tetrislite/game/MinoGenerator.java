@@ -1,7 +1,9 @@
-package com.tetrislite.UI;
+package com.tetrislite.game;
 import java.util.Random;
 
 import com.tetrislite.Tetriminos.*;
+
+
 
 public class MinoGenerator{
     

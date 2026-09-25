@@ -1,11 +1,10 @@
-package com.tetrislite.UI;
+package com.tetrislite.input;
 
 import java.util.ArrayList;
 
 import com.tetrislite.Tetriminos.Block;
 
 import javafx.scene.input.KeyCode;
-
 
 
 
@@ -18,11 +17,11 @@ public class KeyHandler {
 
     
     public KeyHandler(Gameapp ga){
+
         pausePressed = false;
         this.ga = ga;
-        ga.tetrisScene.setOnKeyPressed(e -> { //creates a new event handler, calls handle(e) which contains the lambda we created with e as its
-            //parameter and the code within {} is the body. An argument is passed to handle which is when a key is pressed hence setOnKeyPressed
-            //which as we learned in CMPUT 325 takes the place of our e.
+
+        ga.tetrisScene.setOnKeyPressed(e -> { //Calls handle(e) which contains this body
             
             KeyCode code = e.getCode();
             comboCodes.add(code);
@@ -51,9 +50,8 @@ public class KeyHandler {
                     pausePressed = true;
                 }
             }
+
         });
-
-
 
     }
 

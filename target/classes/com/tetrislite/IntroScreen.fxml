@@ -90,7 +90,7 @@
       </HBox>
       <VBox alignment="TOP_CENTER" layoutX="300.0" layoutY="450.0" minHeight="50.0" minWidth="200.0" prefHeight="50.0" prefWidth="100.0" spacing="20.0">
          <children>
-            <Button alignment="CENTER" minHeight="50.0" mnemonicParsing="false" onAction="#switchToGame" prefHeight="50.0" prefWidth="175.0" stylesheets="@test.css" text="S t a r t">
+            <Button alignment="CENTER" minHeight="50.0" mnemonicParsing="false" onAction="#switchToGame" prefHeight="50.0" prefWidth="175.0" stylesheets="@button.css" text="S t a r t">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

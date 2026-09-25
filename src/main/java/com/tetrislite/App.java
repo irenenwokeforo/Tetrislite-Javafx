@@ -9,13 +9,9 @@ import javafx.util.Duration;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.Media;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-
-
-
 
 
 
@@ -51,6 +47,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        
         launch(); //Calls innit and start method. An initial stage is also created and passed to the start method at this time
     }
 

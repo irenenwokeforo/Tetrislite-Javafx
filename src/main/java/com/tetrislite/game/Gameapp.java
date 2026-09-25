@@ -1,10 +1,11 @@
-package com.tetrislite.UI;
+package com.tetrislite.game;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
+
 
 
 public class Gameapp { 
@@ -50,6 +51,7 @@ public class Gameapp {
         }.start(); //starts the animation timer which is different from App's start, this triggers the handle method to be called 60 times per second
     }
 
+    
     public void addNode(Node node) { //makes it easier to add nodes
         if (!root.getChildren().contains(node)) {
             root.getChildren().add(node);

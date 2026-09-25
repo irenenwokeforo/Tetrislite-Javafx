@@ -1,6 +1,8 @@
-package com.tetrislite.Tetriminos;
+package com.tetrislite.tetriminos;
 
 import javafx.scene.paint.Color;
+
+
 
 public class Mino_O extends Mino{
 
@@ -26,7 +28,7 @@ public class Mino_O extends Mino{
         blocks[3].y_pos = blocks[0].y_pos + Block.M_SIZE;
     }
 
-
+    //Undefined as these are never called
     public void updateDirection(int direction){}
     public void getDirection1(){}
     public void getDirection2(){}

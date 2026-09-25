@@ -1,4 +1,4 @@
-package com.tetrislite.UI;
+package com.tetrislite.game;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -24,7 +24,6 @@ public class BackgroundScene{
     private Random random = new Random();
 
 
-
     public BackgroundScene(){
 
         for(int i = 0; i < 15; i++){
@@ -34,6 +33,7 @@ public class BackgroundScene{
         randomizePosition();
         
     }
+
 
     public void update(){
         dropTimer++;
@@ -55,6 +55,7 @@ public class BackgroundScene{
         }
     }
 
+    
     public void randomizePosition(){  
 
         int count, x_pos, y_pos;

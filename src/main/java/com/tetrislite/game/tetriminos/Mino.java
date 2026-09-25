@@ -1,4 +1,4 @@
-package com.tetrislite.Tetriminos;
+package com.tetrislite.tetriminos;
 import java.util.Random;
 
 import com.tetrislite.UI.KeyHandler;
@@ -35,7 +35,6 @@ public abstract class Mino{
         temp_blocks[2] = new Block(colour);
         temp_blocks[3] = new Block(colour);
     }
-
 
 
     public void render(GraphicsContext gc){

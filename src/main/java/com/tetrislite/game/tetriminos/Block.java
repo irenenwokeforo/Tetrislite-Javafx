@@ -1,9 +1,11 @@
-package com.tetrislite.Tetriminos;
+package com.tetrislite.tetriminos;
 import java.util.Arrays;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+
+
 
 public class Block extends Rectangle{
 
@@ -19,7 +21,6 @@ public class Block extends Rectangle{
     
     public Block(Color c){
         this.colour = c;
-
     }
 
     public Color getShadow(Color c){
@@ -95,7 +96,9 @@ public class Block extends Rectangle{
         return shadow;
     }
 
+
     public void render(GraphicsContext gc){
+        
         Color base = this.colour;
         Color highlight = Color.WHITE.deriveColor(1, 1, 1, 0.7);
         Color shadow = this.getShadow(base);

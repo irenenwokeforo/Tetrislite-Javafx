@@ -1,4 +1,4 @@
-package com.tetrislite.Tetriminos;
+package com.tetrislite.tetriminos;
 
 import javafx.scene.paint.Color;
 
@@ -8,6 +8,7 @@ public class Mino_I extends Mino{
         make(Color.CYAN);
     }
 
+    
     public void setPosition(int x_pos, int y_pos){
         //  o  o  o  o
         //(1, 0, 2, 3)

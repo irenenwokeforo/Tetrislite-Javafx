@@ -1,12 +1,15 @@
-package com.tetrislite.Tetriminos;
+package com.tetrislite.tetriminos;
 
 import javafx.scene.paint.Color;
+
+
 
 public class Mino_J extends Mino{
 
     public Mino_J(){
         make(Color.BLUE);
     }
+
 
     public void setPosition(int x_pos, int y_pos){
         //     o (1)
@@ -47,6 +50,7 @@ public class Mino_J extends Mino{
         updateDirection(1);
     }
 
+
     public void getDirection2(){
         //  o (3)
         //  o  o  o (2, 0, 1)
@@ -66,6 +70,7 @@ public class Mino_J extends Mino{
         updateDirection(2);
     }
     
+
     public void getDirection3(){
         //  o  o (2,3)
         //  o  (0)
@@ -86,6 +91,7 @@ public class Mino_J extends Mino{
         updateDirection(3);
     }
 
+    
     public void getDirection4(){
         //  o  o  o (1, 0, 2)
         //        o (3)
