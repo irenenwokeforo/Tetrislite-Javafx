@@ -14,7 +14,6 @@ public class Gameapp {
 
     final static int FPS = 60;
 
-    //Root Scene creation (the root acts as the root node so that)
     TetrisScene ts;
     public Scene tetrisScene;
     protected Group root; 

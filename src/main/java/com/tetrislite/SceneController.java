@@ -23,10 +23,10 @@ public class SceneController {
 
     public void switchToGame(ActionEvent event) throws IOException{
 
-        Gameapp ga = new Gameapp(); //new instance of the 
-        ga.launchGame(); //triggers
+        Gameapp ga = new Gameapp(); 
+        ga.launchGame(); 
         App.stage.setScene(ga.tetrisScene);
-        App.stage.show(); //reveals our scene where the details are in primary.fxml
+        App.stage.show(); 
     }
 
 

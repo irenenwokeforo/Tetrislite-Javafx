@@ -11,16 +11,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 
-public class TetrisScene { //Holds layout of play area, canvas for drawing, connects visuals to logic
+public class TetrisScene { 
 
     public GraphicsContext gc;
-    Canvas canvas; //allows you to 'draw' on a scene is a type of node
+    Canvas canvas;
     Gameapp ga;
     KeyHandler kh;
 
     //Play Area Dimensions
     final int PANEL_WIDTH = 300;
-    final int PANEL_HEIGHT = 600; //each block should be 30x30 pixels
+    final int PANEL_HEIGHT = 600; 
     final int BLOCK_SIZE = 30;
 
     //Play Area Boundaries
@@ -60,7 +60,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     private boolean fadeOut = true;
 
     //Tetris Effect
-    public boolean tetris = true;
+    public boolean tetris = false;
     int tetrisCounter = 0;
     static int X_TETRIS = 270;
     static int Y_TETRIS = 75;
@@ -83,15 +83,15 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     public TetrisScene(Gameapp ga){ //passing the instance of the gameapp object from App to the scene
 
         this.ga = ga;
-        canvas = new Canvas(ga.APP_WIDTH, ga.APP_HEIGHT); //creates a new canvas ONCE (only when this constructor is called)
-        gc = canvas.getGraphicsContext2D(); //attatching our paint brush to said canvas
+        canvas = new Canvas(ga.APP_WIDTH, ga.APP_HEIGHT); 
+        gc = canvas.getGraphicsContext2D(); 
         kh = new KeyHandler(ga);
 
         //Panel corners
         p_left_x = (ga.APP_WIDTH / 2) - (PANEL_WIDTH / 2); //250
         p_right_x = p_left_x + PANEL_WIDTH; //550
         p_top_y = (ga.APP_HEIGHT / 2) - (PANEL_HEIGHT / 2); //100
-        p_bottom_y = p_top_y + PANEL_HEIGHT;
+        p_bottom_y = p_top_y + PANEL_HEIGHT; //700
 
         //Starting Mino Coordinates
         START_POS_X = p_left_x + (PANEL_WIDTH / 2) - BLOCK_SIZE;
@@ -103,7 +103,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
 
 
         //Setting each mino
-        cur_mino = pickMino(); //change to pickMino2
+        cur_mino = MinoGenerator.pickMino(); 
 
         if(cur_mino instanceof Mino_O){
             cur_mino.setPosition(START_POS_X, START_POS_Y - BLOCK_SIZE);
@@ -113,13 +113,13 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
             cur_mino.setPosition(START_POS_X, START_POS_Y);
         }
 
-        next_mino1 = pickMino();
+        next_mino1 = MinoGenerator.pickMino();
         recenter(next_mino1, NEXTMINO_Y);
 
-        next_mino2 = pickMino();
+        next_mino2 = MinoGenerator.pickMino();
         recenter(next_mino2, NEXTMINO_Y + (4* BLOCK_SIZE));
     
-        next_mino3 = pickMino();
+        next_mino3 = MinoGenerator.pickMino();
         recenter(next_mino3, NEXTMINO_Y + (8 * BLOCK_SIZE));
             //Misc Dimensions
 
@@ -138,24 +138,6 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
         else{
             m.setPosition(NEXTMINO_X, Y_POS);
         }
-    }
-
-// make reusable
-    public Mino pickMino(){
-        Mino mino = null;
-        minoValue = new Random().nextInt(7);
-
-        switch(minoValue){
-            case 0: mino = new Mino_I();break;
-            case 1: mino = new Mino_J();break;
-            case 2: mino = new Mino_L();break;
-            case 3: mino = new Mino_O();break;
-            case 4: mino = new Mino_S();break;
-            case 5: mino = new Mino_T();break;
-            case 6: mino = new Mino_Z();break;
-        }
-
-        return mino;
     }
 
 
@@ -282,7 +264,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
             next_mino2 = next_mino3;
             recenter(next_mino2, NEXTMINO_Y + (4* BLOCK_SIZE));
 
-            next_mino3 = pickMino();
+            next_mino3 = MinoGenerator.pickMino();
             recenter(next_mino3, NEXTMINO_Y + (8 * BLOCK_SIZE));
 
             clearRow();

@@ -5,7 +5,7 @@ import com.tetrislite.Tetriminos.*;
 
 public class MinoGenerator{
     
-    public static Mino pickMino2(){
+    public static Mino pickMino(){
         Mino mino = null;
         int minoValue = new Random().nextInt(7);
 

@@ -28,7 +28,7 @@ public class BackgroundScene{
     public BackgroundScene(){
 
         for(int i = 0; i < 15; i++){
-            fallingMinos.add(MinoGenerator.pickMino2());
+            fallingMinos.add(MinoGenerator.pickMino());
         }
 
         randomizePosition();
@@ -47,7 +47,7 @@ public class BackgroundScene{
                 if(fallingMinos.get(i).blocks[0].y_pos > 800 + 30){
                     int curPos = fallingMinos.get(i).blocks[0].x_pos;
                     fallingMinos.remove(i);
-                    fallingMinos.add(i, MinoGenerator.pickMino2());
+                    fallingMinos.add(i, MinoGenerator.pickMino());
                     fallingMinos.get(i).setPosition(curPos, 0);
                 }
             }
