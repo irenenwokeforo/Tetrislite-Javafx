@@ -60,7 +60,7 @@ public class TetrisScene { //Holds layout of play area, canvas for drawing, conn
     private boolean fadeOut = true;
 
     //Tetris Effect
-    public boolean tetris = false;
+    public boolean tetris = true;
     int tetrisCounter = 0;
     static int X_TETRIS = 270;
     static int Y_TETRIS = 75;

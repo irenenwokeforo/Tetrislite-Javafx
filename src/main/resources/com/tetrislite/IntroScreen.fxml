@@ -88,7 +88,7 @@
             </Label>
          </children>
       </HBox>
-      <VBox alignment="TOP_CENTER" layoutX="300.0" layoutY="450.0" minHeight="200.0" minWidth="200.0" prefHeight="150.0" prefWidth="100.0" spacing="20.0">
+      <VBox alignment="TOP_CENTER" layoutX="300.0" layoutY="450.0" minHeight="50.0" minWidth="200.0" prefHeight="50.0" prefWidth="100.0" spacing="20.0">
          <children>
             <Button alignment="CENTER" minHeight="50.0" mnemonicParsing="false" onAction="#switchToGame" prefHeight="50.0" prefWidth="175.0" stylesheets="@test.css" text="S t a r t">
                <cursor>
@@ -98,16 +98,18 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button alignment="TOP_CENTER" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="175.0" stylesheets="@test.css" text="E x i t" textAlignment="CENTER" textFill="PINK">
-               <font>
-                  <Font name="Handjet Bold" size="30.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
          </children>
       </VBox>
+      <Label layoutX="280.5" layoutY="650.0" maxWidth="-Infinity" text="Created by : Irene Nwokeforo" textFill="#ff9db1">
+         <font>
+            <Font name="Handjet Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="291.5" layoutY="680.0" maxWidth="-Infinity" text="Music by : Joan Nwokeforo" textFill="#ff9db1">
+         <font>
+            <Font name="Handjet Bold" size="25.0" />
+         </font>
+      </Label>
       <Label layoutX="369.0" layoutY="370.0" prefHeight="58.0" prefWidth="66.0" text="Lite" textFill="WHITE">
          <font>
             <Font name="Handjet Bold" size="50.0" />
