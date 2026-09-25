@@ -3,8 +3,8 @@ package com.tetrislite.game;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.tetrislite.Tetriminos.Block;
-import com.tetrislite.Tetriminos.Mino;
+import com.tetrislite.tetriminos.Block;
+import com.tetrislite.tetriminos.Mino;
 
 import javafx.scene.canvas.GraphicsContext;
 
@@ -55,7 +55,7 @@ public class BackgroundScene{
         }
     }
 
-    
+
     public void randomizePosition(){  
 
         int count, x_pos, y_pos;

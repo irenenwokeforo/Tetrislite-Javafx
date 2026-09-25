@@ -1,8 +1,8 @@
-package com.tetrislite.input;
+package com.tetrislite.game;
 
 import java.util.ArrayList;
 
-import com.tetrislite.Tetriminos.Block;
+import com.tetrislite.tetriminos.Block;
 
 import javafx.scene.input.KeyCode;
 

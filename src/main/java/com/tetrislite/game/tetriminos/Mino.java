@@ -1,8 +1,9 @@
 package com.tetrislite.tetriminos;
+
 import java.util.Random;
 
-import com.tetrislite.UI.KeyHandler;
-import com.tetrislite.UI.TetrisScene;
+import com.tetrislite.game.TetrisScene;
+import com.tetrislite.game.KeyHandler;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;

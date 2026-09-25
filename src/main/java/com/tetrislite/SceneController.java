@@ -3,9 +3,9 @@ package com.tetrislite;
 import java.io.IOException;
 import java.time.Duration;
 
-import com.tetrislite.UI.BackgroundScene;
-import com.tetrislite.UI.Gameapp;
-import com.tetrislite.UI.KeyHandler;
+import com.tetrislite.game.BackgroundScene;
+import com.tetrislite.game.Gameapp;
+import com.tetrislite.game.KeyHandler;
 
 import javafx.animation.AnimationTimer;
 import javafx.animation.ScaleTransition;
