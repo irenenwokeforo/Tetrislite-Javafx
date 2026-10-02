@@ -1,3 +1,6 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "outline.problems.colors": true,
+    "problems.visibility": true,
+    "problems.decorations.enabled": true
 }

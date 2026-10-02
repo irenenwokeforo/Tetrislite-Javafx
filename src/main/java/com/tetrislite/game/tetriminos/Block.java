@@ -1,5 +1,4 @@
-package com.tetrislite.tetriminos;
-import java.util.Arrays;
+package com.tetrislite.game.tetriminos;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;

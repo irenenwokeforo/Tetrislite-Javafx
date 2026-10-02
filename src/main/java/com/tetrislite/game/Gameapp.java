@@ -19,7 +19,7 @@ public class Gameapp {
     public Scene tetrisScene;
     protected Group root; 
 
-
+    
     public Gameapp() { //Subclass of Scene so its constructor will call the scene constructor with the appropriate
         root = new Group(); //Group is used as the root which will put all nodes in a container and clip their properties to the size of the scene
         tetrisScene = new Scene(root, APP_WIDTH, APP_HEIGHT, Color.PINK);

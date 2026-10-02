@@ -1,9 +1,8 @@
 package com.tetrislite.game;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-import com.tetrislite.tetriminos.*;
+import com.tetrislite.game.tetriminos.*;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

@@ -1,6 +1,4 @@
-package com.tetrislite.tetriminos;
-
-import java.util.Random;
+package com.tetrislite.game.tetriminos;
 
 import com.tetrislite.game.TetrisScene;
 import com.tetrislite.game.KeyHandler;

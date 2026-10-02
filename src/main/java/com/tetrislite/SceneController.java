@@ -1,14 +1,11 @@
 package com.tetrislite;
 
 import java.io.IOException;
-import java.time.Duration;
 
 import com.tetrislite.game.BackgroundScene;
 import com.tetrislite.game.Gameapp;
-import com.tetrislite.game.KeyHandler;
 
 import javafx.animation.AnimationTimer;
-import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;

@@ -1,7 +1,7 @@
 package com.tetrislite.game;
 import java.util.Random;
 
-import com.tetrislite.tetriminos.*;
+import com.tetrislite.game.tetriminos.*;
 
 
 

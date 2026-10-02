@@ -3,8 +3,7 @@ package com.tetrislite.game;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.tetrislite.tetriminos.Block;
-import com.tetrislite.tetriminos.Mino;
+import com.tetrislite.game.tetriminos.*;
 
 import javafx.scene.canvas.GraphicsContext;
 
